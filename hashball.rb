@@ -1,5 +1,5 @@
 def game_hash
-    team_data = {
+    @game_hash = {
         :home => {
             :team_name => "Brooklyn Nets",
             :colors => ["Black", "White"],
@@ -110,11 +110,41 @@ def game_hash
                     :blocks => 5,
                     :slam_dunks => 12
                 }
-        }
+            }
         
+        }
     }
-    }
-    puts team_data
+    #puts game_hash
+    
+    
+    #def home_team_name
+     # puts @game_hash[:home][:team_name]
+    #end
+    
+    #home_team_name
+    
+    def num_points_scored(player_name)
+        
+        if  @game_hash[:home][:players][player_name]
+             puts @game_hash[:home][:players][player_name][:points]
+         else 
+            puts @game_hash[:away][:players][player_name][:points]
+        end
+    end
+    
+    num_points_scored(:brendan_haywood)
+    
+    def shoe_size(player_name)
+        if @game_hash[:home][:players][player_name]
+            puts @game_hash[:home][:players][player_name][:shoe]
+        else
+            puts @game_hash[:away][:players][player_name][:shoe]
+        end
+    end
+    
+    shoe_size(:brook_lopez)
+    
+    
 end
 
 game_hash
